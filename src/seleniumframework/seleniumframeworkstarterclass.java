@@ -15,6 +15,7 @@ import com.google.common.annotations.VisibleForTesting;
 import baseclass.Base;
 import pageobjects.Homepage;
 import pageobjects.HomepageMoviePortal;
+import pageobjects.HomepageMoviePortalAdmin;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -30,43 +31,39 @@ public class seleniumframeworkstarterclass {
 	}
 	
 	@Test
-	 void testMethod()
+	 void adminLogin()
 	 {
 	    	
 			
-	    	HomepageMoviePortal hp = new HomepageMoviePortal("https://autothon-nagarro-frontend-w04.azurewebsites.net/");
+	    	HomepageMoviePortal hp = new HomepageMoviePortal();
 	    	
+	    	hp.baseURL("https://autothon-nagarro-frontend-e07.azurewebsites.net/");
+	    	
+	    	
+	    	hp.navClick();
 	    	
 	    	hp.loginclickloginlink();
-	    	try {
-	    	Thread.sleep(1000);
-	    	}
-	    	catch(Exception e)
-	    	{
-	    		
-	    	}
-	    	hp.usernameFill("password");
-	    	try {
-		    	Thread.sleep(1000);
-		    	}
-		    	catch(Exception e)
-		    	{
-		    		
-		    	}
-	    	hp.passwordFill("admin");
-	    	try {
-		    	Thread.sleep(1000);
-		    	}
-		    	catch(Exception e)
-		    	{
-		    		
-		    	}
-	    	hp.loginclickbutton();
+	    	
+	    	
+	    	hp.usernameFill("admin");
+	    	
+	    	hp.passwordFill("password");
 	    
-	        String expectedTitle = "Welcome: Mercury Tours";
-	        String actualTitle = hp.getpageTitle();
-	        assertEquals(actualTitle, expectedTitle);
-
+	    	hp.loginclickbutton();
+	    	
+	    	
+	    	HomepageMoviePortalAdmin hpa = new HomepageMoviePortalAdmin();
+	    	
+	    	hpa.addMovie();
+	    	
+	    	
+	    try {
+	     
+	    	Thread.sleep(10000);
+	    }
+	    catch (Exception e) {
+			// TODO: handle exception
+		}
 
 	       
 	    }

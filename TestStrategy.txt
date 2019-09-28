@@ -1,0 +1,11 @@
+Test Strategy
+
+This test was more of a learning exercise for me rather than a competition.
+In release 2 username and password fields were corrected which made me to modify the test.
+Ideally the changes should be restricted to page classes, so this was a learning for me.
+Did understand working of page factory while the navbar was introduced , as i was getting errors.
+
+Overall it was fun experience and i was the only contributor to my team, as experienced qa teammate couldnot turn up on event and my partner was not from testing background, so i enjoyed coding and learning . The framework i developed for this event , will be improved as and when i will get time. This event let me build my own framework.
+
+Thank you for this event.
+Hoping more events like this.

@@ -16,12 +16,19 @@ public class HomepageMoviePortal {
 	String pagetitle ;
 	
 	
-	public HomepageMoviePortal(String url)
+	
+	
+	public HomepageMoviePortal()
 	{
-		driver.get(url);
+		
 		pagetitle = driver.getTitle();
 		PageFactory.initElements(driver, this);
+	
 	}
+	
+	
+	@FindBy(xpath="//*[@id=\"main\"]/span/button")
+	WebElement NavBar;
 	
 	@FindBy(partialLinkText="Login")
 	WebElement LoginLink;
@@ -36,11 +43,31 @@ public class HomepageMoviePortal {
 	@FindBy(name="password")
 	WebElement Password;
 	
-	@FindBy(name="cancel")
+	@FindBy(name="Login")
 	WebElement Button;
+	
+	
+	public void baseURL(String url)
+	{
+		driver.get(url);
+	}
+	
+	
+	public void navClick()
+	{
+		NavBar.click();
+		
+	}
+	
+	
 	
 	public void usernameFill(String username)
 	{	
+		
+		if(!Username.isDisplayed())
+		{
+			NavBar.click();
+		}
 		Username.click();
 		Username.clear();
 		Username.sendKeys(username);
