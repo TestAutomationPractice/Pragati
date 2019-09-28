@@ -35,6 +35,9 @@ public class seleniumframeworkstarterclass {
 	    	
 			
 	    	HomepageMoviePortal hp = new HomepageMoviePortal("https://autothon-nagarro-frontend-w04.azurewebsites.net/");
+	    	
+	    	
+	    	hp.loginclickloginlink();
 	    	try {
 	    	Thread.sleep(1000);
 	    	}
@@ -42,7 +45,7 @@ public class seleniumframeworkstarterclass {
 	    	{
 	    		
 	    	}
-	    	hp.usernameFill("admin");
+	    	hp.usernameFill("password");
 	    	try {
 		    	Thread.sleep(1000);
 		    	}
@@ -50,7 +53,7 @@ public class seleniumframeworkstarterclass {
 		    	{
 		    		
 		    	}
-	    	hp.passwordFill("admin123");
+	    	hp.passwordFill("admin");
 	    	try {
 		    	Thread.sleep(1000);
 		    	}
@@ -59,22 +62,7 @@ public class seleniumframeworkstarterclass {
 		    		
 		    	}
 	    	hp.loginclickbutton();
-	    	try {
-		    	Thread.sleep(1000);
-		    	}
-		    	catch(Exception e)
-		    	{
-		    		
-		    	}
-	    	hp.loginclickloginlink();
-	    	try {
-		    	Thread.sleep(1000);
-		    	}
-		    	catch(Exception e)
-		    	{
-		    		
-		    	}
-	    	hp.cancelclickloginlink();
+	    
 	        String expectedTitle = "Welcome: Mercury Tours";
 	        String actualTitle = hp.getpageTitle();
 	        assertEquals(actualTitle, expectedTitle);
